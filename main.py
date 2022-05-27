@@ -21,17 +21,17 @@ async def dm(ctx, *, msg=None):
             try:
                 await member.send(mesg)
                 print(f"Sended Message | {member.name}")
-                await ctx.send("Sended msg" + member.mention + "|" + member.name + "|" + member.id)
+                await ctx.channel.send("Sended to  " + member.name + "  |  " + member.mention)
                 sendedmsg.append(member.mention)
             except:
                 print(f"Cloudnt Send Message To | {member.name}")
-            time.sleep(16)
+            time.sleep(1)
 
         embed = discord.Embed(
                 title='list of members',
                 colour=discord.Colour.purple()
                 )
-        embed.add_field(name=f"total = {length(sendedmsg)}",value= sendedmsg,inline=False)
+        embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
         await ctx.channel.send(embed=embed)
 
     else:
