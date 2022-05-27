@@ -25,7 +25,7 @@ async def dm(ctx, *, msg=None):
                 sendedmsg.append(member.mention)
             except:
                 print(f"Cloudnt Send Message To | {member.name}")
-            time.sleep(1)
+            time.sleep(16)
 
         embed = discord.Embed(
                 title='list of members',
