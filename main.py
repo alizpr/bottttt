@@ -22,7 +22,7 @@ async def dm(ctx, *, msg=None):
                 await member.send(mesg)
                 print(f"Sended Message | {member.name}")
                 sendedmsg.append(member.mention)
-                await ctx.channel.send("Sended to  " + member.name + "  |  " + member.mention + " nafar" + len(sendedmsg))
+                await ctx.channel.send("Sended to  " + member.name + "  |  " + member.mention + " nafar" + str(len(sendedmsg))
             except:
                 print(f"Cloudnt Send Message To | {member.name}")
             time.sleep(16)
