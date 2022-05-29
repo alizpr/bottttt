@@ -38,4 +38,4 @@ async def dm(ctx, *, msg=None):
         await ctx.send("ye msg bego man beheshon migam")
 
 
-bot.run('OTc5MzM4NDU0NjQ5NDM0MTQy.Gm9M9d.MEmNSHf0PVc-lw1HxwK5apU9qtir-8_x8f6DTs')
+bot.run('OTgwNDk5MDkzMzgwMDE0MDkw.GB1HPB.yOy95m7zD63Ps297vC1PiDurF55jrz-9wWbm-8')
