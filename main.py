@@ -143,4 +143,11 @@ async def leave(ctx):
     else:
         await ctx.send("to nemitooni zoor nazan")
 
+
+@bot.command()
+async def dm_user_msg(ctx, user: discord.User, *, message=None):
+    if ctx.author.id == 830415923620872213 or 697318025975562300:
+        await user.send(message)
+
+
 bot.run(token)
