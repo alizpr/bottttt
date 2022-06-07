@@ -118,4 +118,14 @@ async def dm_all_msg(ctx, *, msg=None):
         else:
             await ctx.send("ye msg bego man beheshon migam")
 
+
+@bot.command()
+async def join(ctx):
+    channel = ctx.author.voice.channel
+    await channel.connect()
+@bot.command()
+async def leave(ctx):
+    await ctx.voice_client.disconnect()
+
+
 bot.run(token)
