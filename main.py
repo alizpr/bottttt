@@ -30,8 +30,8 @@ async def dm_on_msg(ctx, *, msg=None):
 
         members = ctx.guild.members
         if msg != None:
-            if members.name in online_members:
-                for member in members:
+            for member in members:
+                if member.name in online_members:
                     mesg = member.mention + "\n\n\n\n" + msg
                     try:
                         await member.send(mesg)
@@ -42,15 +42,15 @@ async def dm_on_msg(ctx, *, msg=None):
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
 
-                embed = discord.Embed(
-                        title='list of members',
-                        colour=discord.Colour.purple()
-                        )
-                embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await user.send(embed=embed)
+            embed = discord.Embed(
+                    title='list of members',
+                    colour=discord.Colour.purple()
+                    )
+            embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
+            await user.send(embed=embed)
 
-            else:
-                await ctx.send("ye msg bego man beheshon migam")
+        else:
+            await ctx.send("ye msg bego man beheshon migam")
     else:
         await ctx.send("to nemitooni zoor nazan")
 
@@ -70,8 +70,8 @@ async def dm_off_msg(ctx, *, msg=None):
 
         members = ctx.guild.members
         if msg != None:
-            if members.name in offline_members:
-                for member in members:
+            for member in members:
+                if member.name in offline_members:
                     mesg = member.mention + "\n\n\n\n" + msg
                     try:
                         await member.send(mesg)
@@ -82,15 +82,15 @@ async def dm_off_msg(ctx, *, msg=None):
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
 
-                embed = discord.Embed(
-                        title='list of members',
-                        colour=discord.Colour.purple()
-                        )
-                embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await user.send(embed=embed)
+            embed = discord.Embed(
+                    title='list of members',
+                    colour=discord.Colour.purple()
+                    )
+            embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
+            await user.send(embed=embed)
 
-            else:
-                await ctx.send("ye msg bego man beheshon migam")
+        else:
+            await ctx.send("ye msg bego man beheshon migam")
     else:
         await ctx.send("to nemitooni zoor nazan")
 
@@ -109,8 +109,8 @@ async def dm_all_msg(ctx, *, msg=None):
 
         members = ctx.guild.members
         if msg != None:
-            if members.name in all_mem:
-                for member in members:
+            for member in members:
+                if member.name in all_mem:
                     mesg = member.mention + "\n\n\n\n" + msg
                     try:
                         await member.send(mesg)
@@ -121,15 +121,15 @@ async def dm_all_msg(ctx, *, msg=None):
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
 
-                embed = discord.Embed(
-                        title='list of members',
-                        colour=discord.Colour.purple()
-                        )
-                embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await user.send(embed=embed)
+            embed = discord.Embed(
+                    title='list of members',
+                    colour=discord.Colour.purple()
+                    )
+            embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
+            await user.send(embed=embed)
 
-            else:
-                await ctx.send("ye msg bego man beheshon migam")
+        else:
+            await ctx.send("ye msg bego man beheshon migam")
     else:
         await ctx.send("to nemitooni zoor nazan")
 
@@ -152,7 +152,7 @@ async def dm_user_msg(ctx, users: discord.User, *, message=None):
     user = bot.get_user(int("830415923620872213"))
     if ctx.author.id == 830415923620872213 or 697318025975562300:
         await users.send(message)
-        await user.send(f"msg sended to {member.mention}")
+        await user.send(f"msg sended to {users.mention}")
 
 
 @bot.command()
