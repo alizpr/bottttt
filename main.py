@@ -145,9 +145,14 @@ async def leave(ctx):
 
 
 @bot.command()
-async def dm_user_msg(ctx, user: discord.User, *, message=None):
+async def dm(ctx, user: discord.User, *, message=None):
     if ctx.author.id == 830415923620872213 or 697318025975562300:
         await user.send(message)
+
+
+@bot.command()
+async def clear(ctx, amount=5):
+    await ctx.channel.purge(limit=amount+1)
 
 
 bot.run(token)
