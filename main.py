@@ -17,7 +17,7 @@ async def on_ready():
 
 @bot.command()
 async def dm_on_msg(ctx, *, msg=None):
-    user = client.get_user("830415923620872213")
+    user = client.get_user(int(830415923620872213))
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         online_members = []
@@ -57,7 +57,7 @@ async def dm_on_msg(ctx, *, msg=None):
 
 @bot.command()
 async def dm_off_msg(ctx, *, msg=None):
-    user = client.get_user("830415923620872213")
+    user = client.get_user(int(830415923620872213))
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         online_members = []
@@ -97,7 +97,7 @@ async def dm_off_msg(ctx, *, msg=None):
 
 @bot.command()
 async def dm_all_msg(ctx, *, msg=None):
-    user = client.get_user("830415923620872213")
+    user = client.get_user(int(830415923620872213))
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         all_mem = []
@@ -149,7 +149,7 @@ async def leave(ctx):
 
 @bot.command()
 async def dm_user_msg(ctx, user: discord.User, *, message=None):
-    user = client.get_user("830415923620872213")
+    user = client.get_user(int(830415923620872213))
     if ctx.author.id == 830415923620872213 or 697318025975562300:
         await user.send(message)
         await user.send(f"msg sended to {member.mention}")
