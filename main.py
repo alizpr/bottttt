@@ -156,12 +156,6 @@ async def dm_user_msg(ctx, users: discord.User, *, message=None):
 
 
 @bot.command()
-async def clear(ctx, amount=500):
-    if ctx.author.id == 830415923620872213:
-        await ctx.channel.purge(limit=amount+1)
-
-
-@bot.command()
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount=None):
     if amount == None:
