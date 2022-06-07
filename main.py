@@ -27,6 +27,18 @@ async def on_member_join(member):
     ))
 
 
+@bot.event 
+async def on_member_leave(member):
+    members = 0
+    for guild in bot.guilds:
+        members += guild.member_count - 1
+
+    await bot.change_presence(activity = discord.Activity(
+        type = discord.ActivityType.watching,
+        name = f"{members} members in Mr_amin_gg's server"
+    ))
+
+
 @bot.command()
 async def dm_on_msg(ctx, *, msg=None):
     user = bot.get_user(int("830415923620872213"))
