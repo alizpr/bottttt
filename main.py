@@ -161,4 +161,12 @@ async def clear(ctx, amount=500):
         await ctx.channel.purge(limit=amount+1)
 
 
+@bot.command()
+@commands.has_permissions(manage_messages=True)
+async def clear(ctx, amount=None):
+    if amount == None:
+        await ctx.channel.purge(limit=500)
+    else:
+        await ctx.channel.purge(limit=amount)
+
 bot.run(token)
