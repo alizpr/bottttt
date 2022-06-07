@@ -14,6 +14,9 @@ bot.remove_command('help')
 async def on_ready():
     print('Potato Cat is ready :D')
 
+
+@client.event 
+async def on_member_join(member):
     members = 0
     for guild in bot.guilds:
         members += guild.member_count - 1
@@ -46,7 +49,7 @@ async def dm_on_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.name}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -86,7 +89,7 @@ async def dm_off_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.name}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -125,7 +128,7 @@ async def dm_all_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.name}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -168,8 +171,8 @@ async def dm_user_msg(ctx, users: discord.User, *, message=None):
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount=None):
     if amount == None:
-        await ctx.channel.purge(limit=500)
+        await ctx.channel.purge(limit=501)
     else:
-        await ctx.channel.purge(limit=amount)
+        await ctx.channel.purge(limit=amount+1)
 
 bot.run(token)
