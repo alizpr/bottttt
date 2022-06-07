@@ -17,6 +17,7 @@ async def on_ready():
 
 @bot.command()
 async def dm_on_msg(ctx, *, msg=None):
+    user = client.get_user("830415923620872213")
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         online_members = []
@@ -36,7 +37,7 @@ async def dm_on_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await ctx.channel.send(("Sended to  " + member.mention) + f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -46,7 +47,7 @@ async def dm_on_msg(ctx, *, msg=None):
                         colour=discord.Colour.purple()
                         )
                 embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await ctx.channel.send(embed=embed)
+                await user.send(embed=embed)
 
             else:
                 await ctx.send("ye msg bego man beheshon migam")
@@ -56,6 +57,7 @@ async def dm_on_msg(ctx, *, msg=None):
 
 @bot.command()
 async def dm_off_msg(ctx, *, msg=None):
+    user = client.get_user("830415923620872213")
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         online_members = []
@@ -75,7 +77,7 @@ async def dm_off_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await ctx.channel.send(("Sended to  " + member.mention) + f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -85,7 +87,7 @@ async def dm_off_msg(ctx, *, msg=None):
                         colour=discord.Colour.purple()
                         )
                 embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await ctx.channel.send(embed=embed)
+                await user.send(embed=embed)
 
             else:
                 await ctx.send("ye msg bego man beheshon migam")
@@ -95,6 +97,7 @@ async def dm_off_msg(ctx, *, msg=None):
 
 @bot.command()
 async def dm_all_msg(ctx, *, msg=None):
+    user = client.get_user("830415923620872213")
     if ctx.author.id == 830415923620872213:
         sendedmsg = []
         all_mem = []
@@ -113,7 +116,7 @@ async def dm_all_msg(ctx, *, msg=None):
                         await member.send(mesg)
                         print(f"Sended Message | {member.name}")
                         sendedmsg.append(member.mention)
-                        await ctx.channel.send(("Sended to  " + member.mention) + f" | nafar = {len(sendedmsg)}")
+                        await user.send(f"msg sended to {member.mention}"+ f" | nafar = {len(sendedmsg)}")
                     except:
                         print(f"Cloudnt Send Message To | {member.name}")
                     time.sleep(16)
@@ -123,7 +126,7 @@ async def dm_all_msg(ctx, *, msg=None):
                         colour=discord.Colour.purple()
                         )
                 embed.add_field(name=f"total = {len(sendedmsg)}",value= sendedmsg,inline=False)
-                await ctx.channel.send(embed=embed)
+                await user.send(embed=embed)
 
             else:
                 await ctx.send("ye msg bego man beheshon migam")
@@ -146,8 +149,10 @@ async def leave(ctx):
 
 @bot.command()
 async def dm_user_msg(ctx, user: discord.User, *, message=None):
+    user = client.get_user("830415923620872213")
     if ctx.author.id == 830415923620872213 or 697318025975562300:
         await user.send(message)
+        await user.send(f"msg sended to {member.mention}")
 
 
 @bot.command()
