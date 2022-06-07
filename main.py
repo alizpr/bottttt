@@ -12,7 +12,16 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    print('Online shode')
+    print('Potato Cat is ready :D')
+
+    members = 0
+    for guild in bot.guilds:
+        members += guild.member_count - 1
+
+    await bot.change_presence(activity = discord.Activity(
+        type = discord.ActivityType.watching,
+        name = f"{members} members in Mr_amin_gg's server"
+    ))
 
 
 @bot.command()
