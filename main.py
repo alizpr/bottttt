@@ -16,6 +16,7 @@ async def on_ready():
 
 
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def dm_on_msg(ctx, *, msg=None):
     sendedmsg = []
     online_members = []
@@ -52,6 +53,7 @@ async def dm_on_msg(ctx, *, msg=None):
 
 
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def dm_off_msg(ctx, *, msg=None):
     sendedmsg = []
     online_members = []
@@ -88,6 +90,7 @@ async def dm_off_msg(ctx, *, msg=None):
 
 
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def dm_all_msg(ctx, *, msg=None):
     sendedmsg = []
     all_mem = []
@@ -123,10 +126,12 @@ async def dm_all_msg(ctx, *, msg=None):
 
 
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def join(ctx):
     channel = ctx.author.voice.channel
     await channel.connect()
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def leave(ctx):
     await ctx.voice_client.disconnect()
 
