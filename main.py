@@ -15,7 +15,7 @@ async def on_ready():
     print('Potato Cat is ready :D')
 
 
-@client.event 
+@bot.event 
 async def on_member_join(member):
     members = 0
     for guild in bot.guilds:
