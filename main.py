@@ -145,7 +145,7 @@ async def leave(ctx):
 
 
 @bot.command()
-async def dm(ctx, user: discord.User, *, message=None):
+async def dm_user_msg(ctx, user: discord.User, *, message=None):
     if ctx.author.id == 830415923620872213 or 697318025975562300:
         await user.send(message)
 
