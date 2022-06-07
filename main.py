@@ -173,6 +173,7 @@ async def clear(ctx, amount=None):
     if amount == None:
         await ctx.channel.purge(limit=501)
     else:
+        int(amount)
         await ctx.channel.purge(limit=amount+1)
 
 bot.run(token)
