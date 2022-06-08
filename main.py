@@ -13,18 +13,10 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print('Potato Cat is ready :D')
-    all_mem = []
-    for member in ctx.guild.members:
-        if member.status is not discord.Status.offline:
-            all_mem.append(member.name)
-        else:
-            all_mem.append(member.name)
-    
-    guild = client.get_guild(GUILD_ID)
+    guil = client.get_guild(838864299057217597)
     members = 0
-    for guil in guild:
-        if guild.name in all_mem:
-            members += guild.member_count - 1
+    for guild in guil:
+        members += guild.member_count - 1
 
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
@@ -34,18 +26,10 @@ async def on_ready():
 
 @bot.event 
 async def on_member_join(member):
-    all_mem = []
-    for member in ctx.guild.members:
-        if member.status is not discord.Status.offline:
-            all_mem.append(member.name)
-        else:
-            all_mem.append(member.name)
-    
-    guild = client.get_guild(GUILD_ID)
+    guil = client.get_guild(838864299057217597)
     members = 0
-    for guil in guild:
-        if guild.name in all_mem:
-            members += guild.member_count - 1
+    for guild in guil:
+        members += guild.member_count - 1
 
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
