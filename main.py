@@ -14,38 +14,27 @@ bot.remove_command('help')
 async def on_ready():
     print('Potato Cat is ready :D')
     guil = bot.get_guild(838864299057217597)
-    members = 0
-    for guild in guil:
-        members += guild.member_count - 1
-
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{members} members in Mr_amin_gg's server"
+        name = f"{len(members)} members in Mr_amin_gg's server"
     ))
 
 
 @bot.event 
 async def on_member_join(member):
     guil = bot.get_guild(838864299057217597)
-    members = 0
-    for guild in guil:
-        members += guild.member_count - 1
-
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{members} members in Mr_amin_gg's server"
+        name = f"{len(members)} members in Mr_amin_gg's server"
     ))
 
 
 @bot.event 
 async def on_member_leave(member):
-    members = 0
-    for guild in bot.guilds:
-        members += guild.member_count - 1
-
+    guil = bot.get_guild(838864299057217597)
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{members} members in Mr_amin_gg's server"
+        name = f"{len(members)} members in Mr_amin_gg's server"
     ))
 
 
