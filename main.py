@@ -13,7 +13,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print('Potato Cat is ready :D')
-    guil = client.get_guild(838864299057217597)
+    guil = bot.get_guild(838864299057217597)
     members = 0
     for guild in guil:
         members += guild.member_count - 1
@@ -26,7 +26,7 @@ async def on_ready():
 
 @bot.event 
 async def on_member_join(member):
-    guil = client.get_guild(838864299057217597)
+    guil = bot.get_guild(838864299057217597)
     members = 0
     for guild in guil:
         members += guild.member_count - 1
