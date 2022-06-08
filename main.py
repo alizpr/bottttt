@@ -181,7 +181,7 @@ async def dm_user_msg(ctx, users: discord.User, *, message=None):
 
 @bot.command()
 async def clear(ctx, amount=None):
-    if ctx.author.guild_permissions.manage_message or ctx.author.id == 697318025975562300:
+    if ctx.author.guild_permissions.manage_messages or ctx.author.id == 697318025975562300:
         if amount == None:
             await ctx.channel.purge(limit=501)
         else:
