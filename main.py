@@ -180,7 +180,7 @@ async def dm_user_msg(ctx, users: discord.User, *, message=None):
 
 
 @bot.command()
-@commands.has_permissions(manage_messages=True)
+@commands.has_permissions(manage_server=True)
 async def clear(ctx, amount=None):
     if amount == None:
         await ctx.channel.purge(limit=501)
