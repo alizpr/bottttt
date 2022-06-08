@@ -193,6 +193,7 @@ async def avatar(ctx, *, member: discord.Member = None):
     if not member:
         member = ctx.message.author
     em = discord.Embed(title=str(member), color=0xAE0808)
+    em.set_author(icon_url=f"{member.avatar_url}")
     em.set_image(url=member.avatar_url)
     await ctx.reply(embed=em, mention_author=False)
 
