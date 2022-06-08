@@ -187,4 +187,14 @@ async def clear(ctx, amount=None):
             amount = int(amount)
             await ctx.channel.purge(limit=amount+1)
 
+
+@bot.command()
+async def avatar(ctx, *, member: discord.Member = None):
+    if not member:
+        member = ctx.message.author
+    em = discord.Embed(title=str(member), color=0xAE0808)
+    em.set_image(url=member.avatar_url)
+    await ctx.reply(embed=em, mention_author=False)
+
+
 bot.run(token)
