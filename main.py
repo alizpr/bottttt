@@ -16,7 +16,7 @@ async def on_ready():
     guil = bot.get_guild(838864299057217597)
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{len(members)} members in Mr_amin_gg's server"
+        name = f"{len(guil)} members in Mr_amin_gg's server"
     ))
 
 
@@ -25,7 +25,7 @@ async def on_member_join(member):
     guil = bot.get_guild(838864299057217597)
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{len(members)} members in Mr_amin_gg's server"
+        name = f"{len(guil)} members in Mr_amin_gg's server"
     ))
 
 
@@ -34,7 +34,7 @@ async def on_member_leave(member):
     guil = bot.get_guild(838864299057217597)
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
-        name = f"{len(members)} members in Mr_amin_gg's server"
+        name = f"{len(guil)} members in Mr_amin_gg's server"
     ))
 
 
