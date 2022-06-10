@@ -195,6 +195,8 @@ async def avatar(ctx, *, member: discord.Member = None):
     em = discord.Embed(title=str(member), color=0xAE0808)
     em.set_author(icon_url=f"{member.avatar_url}")
     em.set_image(url=member.avatar_url)
+    em.set_footer(text=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url=ctx.author.avatar_url)
+    em4.timestamp = datetime.datetime.utcnow()
     await ctx.reply(embed=em, mention_author=False)
 
 
