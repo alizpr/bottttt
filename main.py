@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import time
+import datetime
 
 token = "OTgwMzc0ODU3NjEzMTkzMjE2.Gr9iJM.AXG996RSNRIvranPhRk8hxTE8oqezfViY5WUxQ"
 intents = discord.Intents.all()
