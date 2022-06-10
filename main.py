@@ -30,7 +30,7 @@ async def on_member_join(member):
 
 
 @bot.event 
-async def on_member_leave(member):
+async def on_member_remove(member):
     guild = bot.get_guild(838864299057217597)
     await bot.change_presence(activity = discord.Activity(
         type = discord.ActivityType.watching,
