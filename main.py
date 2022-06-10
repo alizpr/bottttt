@@ -190,7 +190,7 @@ async def clear(ctx, amount=None):
 
 @bot.command()
 async def avatar(ctx, *, member: discord.Member = None):
-    if not member:
+    if member is None:
         member = ctx.message.author
     em = discord.Embed(title=str(member), color=0xAE0808)
     em.set_author(icon_url=f"{member.avatar_url}")
