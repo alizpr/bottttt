@@ -197,7 +197,7 @@ async def avatar(ctx, *, member: discord.Member = None):
     em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator} BALANCE", icon_url=ctx.author.avatar_url)
     em.set_image(url=member.avatar_url)
     em.set_footer(text=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url=ctx.author.avatar_url)
-    em4.timestamp = datetime.datetime.utcnow()
+    em.timestamp = datetime.datetime.utcnow()
     await ctx.reply(embed=em, mention_author=False)
 
 
